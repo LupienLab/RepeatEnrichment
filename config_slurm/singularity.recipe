@@ -1,0 +1,54 @@
+Bootstrap: docker
+From: continuumio/miniconda
+
+%labels
+AUTHOR ankita.nand@uhnresearch.ca
+
+%environment
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# This sets global environment variables for anything run within the container
+export PATH="/opt/conda/bin:/usr/local/bin:/usr/bin:/bin:"
+unset CONDA_DEFAULT_ENV
+export ANACONDA_HOME=/opt/conda
+
+%post
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# This is going to be executed after the base container has been downloaded
+export PATH=/opt/conda/bin:$PATH
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
+
+conda install --yes python=3.6
+conda install --yes -c conda-forge r-base=4.0.0
+conda install --yes -c r r-rcurl
+conda install --yes -c bioconda bioconductor-biocparallel
+conda install --yes -c r r-xml 
+conda install --yes -c r r-data.table
+conda install --yes -c bioconda bioconductor-genomation
+conda install --yes -c r r-codetools
+##R libraries
+R -e "install.packages('Matrix', repos='http://R-Forge.R-project.org')"
+R -e "install.packages('BiocManager', repos='http://cran.rstudio.com')"
+R -e "install.packages('ggrepel', repos='http://cran.rstudio.com')"
+R -e "install.packages('tidyverse', repos='http://cran.rstudio.com')"
+R -e "install.packages('pheatmap', repos='http://cran.rstudio.com')"
+R -e "install.packages('gplots', repos='http://cran.rstudio.com')"
+R -e "install.packages('stringr', repos='http://cran.rstudio.com')"
+R -e "install.packages('RColorBrewer', repos='http://cran.rstudio.com')"
+R -e "install.packages('dplyr', repos='http://cran.rstudio.com')"
+R -e "install.packages('attempt', repos='http://cran.rstudio.com')"
+R -e "BiocManager::install('Rsamtools')"
+R -e "BiocManager::install('motifmatchr')"
+R -e "BiocManager::install('BiocVersion')"
+R -e "BiocManager::install('chromVAR')"
+R -e "BiocManager::install('BSgenome.Hsapiens.UCSC.hg19')"
+R -e "BiocManager::install('BSgenome.Hsapiens.UCSC.hg38')"
+R -e "BiocManager::install('JASPAR2016')"
+R -e "BiocManager::install('SummarizedExperiment')"
+R -e "BiocManager::install('GenomicAlignments')"
+R -e "BiocManager::install('GenomicRanges')"
+
+
+
+#/cluster/tools/software/centos7/singularity/3.5.2/bin/singularity build --remote ml_repeat_pipeline_v1.0.sif singularity.recipe

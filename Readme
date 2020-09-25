@@ -1,0 +1,14 @@
+Input to the pipeline:
+1) Peaks folder consisting of all ATAC peaks bed file.
+2) A consensus of all peaks bed file combined i.e. cat, merged and sorted.
+3) Metadata file consisting of 4 columns rowsname "filename" "SampleName" "Group".
+
+
+
+To run the pipeline:
+
+1) Snakemake is installed/loaded means run this command:   module load snakemake/5.20.1
+2) Make sure you have all your input files.
+3) Edit config.yaml to pass all correct variables.
+4) from repeat_chromvar directory run the command:   sbatch config_slurm/run-pipeline.sh
+

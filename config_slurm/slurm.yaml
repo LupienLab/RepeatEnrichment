@@ -1,0 +1,8 @@
+__default__:
+    params: "--export=ALL -p all -t 12:00:00 --mem=6G"
+
+generate_binarymatrix:
+    params: "--export=ALL -p himem -t 12:00:00 --mem=60G  -c 2"
+
+run_chromvar:
+    params: "--export=ALL -p veryhimem -t 12:00:00 --mem=180G -c 2"

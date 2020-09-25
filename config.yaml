@@ -1,0 +1,8 @@
+opname: "cellLINES.H3K27ac"
+metadatafile: /cluster/projects/lupiengroup/ggrillo/TE.enrichment.pipeline.test/repeat_chromvar/input/metadata.ENCODE.cell.lines.ONLY.ready.to.use.txt
+consensusfile: /cluster/projects/lupiengroup/ggrillo/TE.enrichment.pipeline.test/repeat_chromvar/input/Consensus.Shared.ENCODE.cell.lines.ONLY.qval0.05.bed
+PEAKS_DIR: /cluster/projects/lupiengroup/ggrillo/TE.enrichment.pipeline.test/repeat_chromvar/input/peaks_ENCODE.cellLINES.H3K27c.only/
+peaks_extension: ".narrowPeak.sorted.qval0.05.bed"
+hg38TEs_DIR: static/hg38_only_TEs/
+hg38TEs_extension: ".bed.sorted"
+qval: 0.01
