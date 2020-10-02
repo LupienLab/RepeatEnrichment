@@ -12,5 +12,5 @@ To run the pipeline:
 3) run -     singularity pull --arch amd64 library://nandankita/default/lupien-lab:ml_repeat_pipeline_v1.0 
 4) Make sure you have all your input files.
 5) Edit config.yaml to pass all correct variables.
-6) from repeat_chromvar directory run the command:   sbatch config_slurm/run-pipeline.sh
+6) from RepeatEnrichment directory run the command:   sbatch config_slurm/run-pipeline.sh
 
