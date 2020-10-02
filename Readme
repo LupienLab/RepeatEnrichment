@@ -14,3 +14,9 @@ To run the pipeline:
 5) Edit config.yaml to pass all correct variables.
 6) from RepeatEnrichment directory run the command:   sbatch config_slurm/run-pipeline.sh
 
+Singlarity is installed here on cluster:
+h4h:
+/cluster/tools/software/centos7/singularity/3.5.2/bin/singularity
+
+mordor:
+/mnt/work1/software/centos7/singularity/3.5.2/bin/singularity
