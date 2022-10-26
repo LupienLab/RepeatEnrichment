@@ -2,7 +2,7 @@
 #SBATCH -p himem
 #SBATCH --mem=30G
 #SBATCH -t 12:00:00
-#SBATCH -J Preparing_CRPC_files_and_consensus_set
+#SBATCH -J Preparing_files
 #SBATCH -o %x-%j.out
 #SBATCH -e %x-%j.err
 #SBATCH -c 1
